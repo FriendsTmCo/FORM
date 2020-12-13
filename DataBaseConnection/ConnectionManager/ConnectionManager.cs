@@ -1,21 +1,95 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Data.SqlClient;
 using System.Threading.Tasks;
 
 namespace DataBaseConnection.ConnectionManager
 {
+
+    /// <summary>
+    /// Connection Manager Impelementation
+    /// Services
+    /// </summary>
     public class ConnectionManager : IConnectionManager
     {
-        public bool Connect()
+        #region ..::Dependency::..
+
+        private string _connectionString = "";
+
+        public ConnectionManager(string connectionString)
         {
-            throw new NotImplementedException();
+            _connectionString = connectionString;
+        }
+       
+        #endregion
+
+        #region ::Connectetion Services::
+
+        public async Task<bool> ConnectAsync()
+        {
+            return await Task.Run(async () =>
+            {
+                try
+                {
+                    SqlConnection sqlConnection = new(_connectionString);
+                    await sqlConnection.OpenAsync();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            });
         }
 
-        public Task<bool> ConnectAsync()
+        public bool Connect()
         {
-            throw new NotImplementedException();
+            try
+            {
+                SqlConnection sqlConnection = new(_connectionString);
+                sqlConnection.OpenAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
+
+        #endregion
+
+        #region ::DisConnection Services::
+
+        public async Task<bool> DiConnectAsync()
+        {
+            return await Task.Run(async () =>
+            {
+                try
+                {
+                    SqlConnection sqlConnection = new(_connectionString);
+                    await sqlConnection.CloseAsync();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            });
+        }
+
+        public bool DisConnect()
+        {
+            try
+            {
+                SqlConnection sqlConnection = new(_connectionString);
+                sqlConnection.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
     }
 }
