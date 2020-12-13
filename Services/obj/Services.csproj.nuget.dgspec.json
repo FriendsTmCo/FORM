@@ -4,6 +4,70 @@
     "D:\\project\\FTEAM\\FORM\\Services\\Services.csproj": {}
   },
   "projects": {
+    "D:\\project\\FTEAM\\FORM\\DataBaseConnection\\DataBaseConnection.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\project\\FTEAM\\FORM\\DataBaseConnection\\DataBaseConnection.csproj",
+        "projectName": "DataBaseConnection",
+        "projectPath": "D:\\project\\FTEAM\\FORM\\DataBaseConnection\\DataBaseConnection.csproj",
+        "packagesPath": "C:\\Users\\Amir Hossin\\.nuget\\packages\\",
+        "outputPath": "D:\\project\\FTEAM\\FORM\\DataBaseConnection\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Amir Hossin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-rc.2.20479.15\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\project\\FTEAM\\FORM\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -31,7 +95,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\project\\FTEAM\\FORM\\DataBaseConnection\\DataBaseConnection.csproj": {
+                "projectPath": "D:\\project\\FTEAM\\FORM\\DataBaseConnection\\DataBaseConnection.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

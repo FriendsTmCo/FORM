@@ -5,8 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Manager\" />
     <Folder Include="ServicesManager\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataBaseConnection\DataBaseConnection.csproj" />
   </ItemGroup>
 
 </Project>
